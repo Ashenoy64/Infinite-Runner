@@ -17,8 +17,10 @@ public class SpawnManager : MonoBehaviour
 
     void spawnObstacle()
     {
+        
         if(playerControllerScript.gameOver == false)
-        Instantiate(prefab, spawnPos, prefab.transform.rotation);
+        Instantiate(prefab, new Vector3(30, -0.3f, 0), prefab.transform.rotation);
+
     }
 
     // Update is called once per frame

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,6 +17,8 @@ public class PlayerController : MonoBehaviour
     private AudioSource playerAudio;
     public AudioClip jumpSound;
     public AudioClip crashSound;
+
+    public Canvas gameOverLayer;
     void Start()
     {
         playerAudio = GetComponent<AudioSource>();
@@ -39,6 +43,7 @@ public class PlayerController : MonoBehaviour
             playerAnim.SetBool("Death_b", true);
             playerAnim.SetInteger("DeathType_int", 2);
             dirtParticle.Stop();
+            gameOverLayer.gameObject.SetActive(true);
         }
     }
     // Update is called once per frame
